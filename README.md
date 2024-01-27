@@ -1,2 +1,2 @@
 # MathApp
-Math Game
+Basic Math app
