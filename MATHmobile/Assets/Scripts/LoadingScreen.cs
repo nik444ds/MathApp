@@ -7,8 +7,7 @@ public class LoadingScreen : MonoBehaviour
     public Image[] images;
     public Text[] texts;
 
-    private int currentImageIndex;
-    private int currentTextIndex;
+    private int currentIndex;
 
     private void Start()
     {
@@ -19,20 +18,24 @@ public class LoadingScreen : MonoBehaviour
     {
         while (true)
         {
-            currentImageIndex = Random.Range(0, images.Length);
-            currentTextIndex = Random.Range(0, texts.Length);
+            currentIndex = Random.Range(0, images.Length);
 
-            SetImage(images[currentImageIndex]);
-            SetText(texts[currentTextIndex]);
+            SetImage(images[currentIndex]);
+            SetText(texts[currentIndex]);
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(5);
         }
     }
 
     private void SetImage(Image image)
     {
+        // Reativa todos os objetos Image
+        foreach (Image img in images)
+        {
+            img.gameObject.SetActive(true);
+        }
+
         image.gameObject.SetActive(true);
-        GetComponent<Image>().sprite = image.sprite;
 
         if (image == null)
         {
@@ -40,6 +43,7 @@ public class LoadingScreen : MonoBehaviour
             return;
         }
 
+        // Desativa todos os objetos Image, exceto o objeto Image selecionado
         foreach (Image img in images)
         {
             if (img != image)
@@ -51,9 +55,21 @@ public class LoadingScreen : MonoBehaviour
 
     private void SetText(Text text)
     {
-        text.gameObject.SetActive(true);
-        GetComponentInChildren<Text>().text = text.text;
+        // Reativa todos os objetos Text
+        foreach (Text t in texts)
+        {
+            t.gameObject.SetActive(true);
+        }
 
+        text.gameObject.SetActive(true);
+
+        if (text == null)
+        {
+            Debug.LogError("Text object is null!");
+            return;
+        }
+
+        // Desativa todos os objetos Text, exceto o objeto Text selecionado
         foreach (Text t in texts)
         {
             if (t != text)
