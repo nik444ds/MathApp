@@ -12,6 +12,6 @@ public class LoadOtherScene : MonoBehaviour
     private IEnumerator LoadScene()
     {
         yield return new WaitForSeconds(5); // Aguarda 5 segundos antes de carregar a cena
-        SceneManager.LoadScene("Game Scene"); // Carrega a cena desejada
+        SceneManager.LoadScene("Multiplication"); // Carrega a cena desejada
     }
 }
