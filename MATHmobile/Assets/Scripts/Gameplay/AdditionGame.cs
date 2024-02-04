@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class AdditionGame : MonoBehaviour
 {
     public Text questionText;
@@ -13,6 +12,9 @@ public class AdditionGame : MonoBehaviour
     public Button buttonA;
     public Button buttonB;
     public Button buttonC;
+
+    private int consecutiveCorrectAnswers = 0;
+    private int consecutiveIncorrectAnswers = 0;
 
     private void Start()
     {
@@ -67,17 +69,31 @@ public class AdditionGame : MonoBehaviour
             list[k] = value;
         }
     }
+
     public void CheckAnswer(Button button)
     {
         int realAnswer = int.Parse(button.GetComponentInChildren<Text>().text);
         if (realAnswer == CorrectAnswer)
         {
             Debug.Log("Correct!");
+            consecutiveCorrectAnswers++;
+            if (consecutiveCorrectAnswers >= 3)
+            {
+                limitValue += 10;
+                consecutiveCorrectAnswers = 0;
+            }
             GenerateQuestion();
         }
         else
         {
             Debug.Log("Incorrect!");
+            consecutiveIncorrectAnswers++;
+            if (consecutiveIncorrectAnswers >= 3)
+            {
+                limitValue -= 10;
+                if (limitValue < 10) limitValue = 10;
+                consecutiveIncorrectAnswers = 0;
+            }
         }
     }
 }

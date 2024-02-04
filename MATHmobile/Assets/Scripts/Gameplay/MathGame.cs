@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class MathGame : MonoBehaviour
 {
     public Text problemText;
-    public Text answerText;
+
     public int correctAnswer;
     public int maxValue = 10;
+    public int problemsSolved = 0;
+    public int problemsToIncreaseMaxValue = 5;
 
     public Button button1;
     public Button button2;
@@ -21,11 +23,17 @@ public class MathGame : MonoBehaviour
 
     void GenerateProblem()
     {
+        if (problemsSolved >= problemsToIncreaseMaxValue)
+        {
+            maxValue++;
+            problemsSolved = 0;
+        }
+
         int num1 = Random.Range(1, maxValue);
         int num2 = Random.Range(1, maxValue);
         correctAnswer = num1 * num2;
         problemText.text = num1.ToString() + " x " + num2.ToString() + " = ?";
-        answerText.text = "";
+
 
         int wrongAnswer1 = Random.Range(1, maxValue * maxValue);
         int wrongAnswer2 = Random.Range(1, maxValue * maxValue);
@@ -52,6 +60,7 @@ public class MathGame : MonoBehaviour
         if (playerAnswer == correctAnswer)
         {
             Debug.Log("Correct!");
+            problemsSolved++;
             GenerateProblem();
         }
         else
@@ -66,6 +75,7 @@ public class MathGame : MonoBehaviour
         if (playerAnswer == correctAnswer)
         {
             Debug.Log("Correct!");
+            problemsSolved++;
             GenerateProblem();
         }
         else
@@ -80,6 +90,7 @@ public class MathGame : MonoBehaviour
         if (playerAnswer == correctAnswer)
         {
             Debug.Log("Correct!");
+            problemsSolved++;
             GenerateProblem();
         }
         else
