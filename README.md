@@ -1,6 +1,6 @@
 # MathApp (beta version)
 
-A **2D math game** built with Unity and C#. Practice basic arithmetic operations in a fun and interactive way.
+A **2D math game** built with Unity and C# for android. Practice basic arithmetic operations in a fun and interactive way.
 
 ##  About
 
