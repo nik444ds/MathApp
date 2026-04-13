@@ -15,16 +15,16 @@ MathApp is a 2D Unity game designed to make learning basic math engaging. Player
 
 ## Screenshots
 
-#ADD OPERATION
+##ADD OPERATION
 ![Screenshot_20260413_121113_MATHmobile](https://github.com/user-attachments/assets/a88cdcb6-972c-4f56-b755-8bf73a73a176)
 
-#MULTIPLIICATION OPERATION
+##MULTIPLICATION OPERATION
 ![Screenshot_20260413_121138_MATHmobile](https://github.com/user-attachments/assets/38379b3b-162a-4d48-b2d7-5d4fa62a0901)
 
-#SUBTRACTION OPERATION
+##SUBTRACTION OPERATION
 ![Screenshot_20260413_121146_MATHmobile](https://github.com/user-attachments/assets/1cca7209-4be3-44c2-b092-2fa3ecb85cd7)
 
-#DIVISION OPERATION
+##DIVISION OPERATION
 ![DIV](https://github.com/user-attachments/assets/f50a50bb-60e4-4106-a6e0-15567bf10d02)
 
 
@@ -32,7 +32,7 @@ MathApp is a 2D Unity game designed to make learning basic math engaging. Player
 ## How to Run
 
 ### Option 1 — Play directly
-Download the latest build from [Releases](https://github.com/nik444ds/MathApp/releases) and run the executable.
+Download the latest build from [Releases](https://github.com/nik444ds/MathApp/releases/Unity-Version) and run the executable.
 
 ### Option 2 — Open in Unity
 1. Clone the repository:
